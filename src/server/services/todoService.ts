@@ -1,1 +1,1 @@
-export {};
+import { prisma } from "../db";

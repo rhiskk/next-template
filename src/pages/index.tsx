@@ -1,5 +1,6 @@
 import { type NextPage } from "next";
 import { api } from "../utils/api";
+import Greeting from "../components/Greeting";
 
 const Home: NextPage = () => {
   const hello = api.skeleton.hello.useQuery({ text: "from API" });
@@ -11,9 +12,9 @@ const Home: NextPage = () => {
           <h1 className="border-red-900 text-6xl font-bold text-black">
             Hello world!
           </h1>
-          <p className="text-2xl font-medium text-black">
-            {hello.data ? hello.data.greeting : "Loading..."}
-          </p>
+          <Greeting
+            greeting={hello.data ? hello.data.greeting : "Loading..."}
+          />
         </div>
       </main>
     </>

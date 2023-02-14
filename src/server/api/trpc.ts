@@ -1,11 +1,8 @@
-import { prisma } from "../db";
 import { initTRPC } from "@trpc/server";
 import superjson from "superjson";
 
 export const createTRPCContext = () => {
-  return {
-    prisma,
-  };
+  return {};
 };
 
 const t = initTRPC.context<typeof createTRPCContext>().create({

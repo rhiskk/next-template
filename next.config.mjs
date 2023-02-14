@@ -7,6 +7,6 @@ const config = {
       use: [{ loader: "@svgr/webpack", options: { icon: true } }],
     });
     return config;
-  }
+  },
 };
 export default config;
