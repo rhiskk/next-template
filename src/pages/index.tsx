@@ -12,9 +12,7 @@ const Home: NextPage = () => {
           <h1 className="border-red-900 text-6xl font-bold text-black">
             Hello world!
           </h1>
-          <Greeting
-            greeting={hello.data ? hello.data.greeting : "Loading..."}
-          />
+          <Greeting text={hello.data ? hello.data.greeting : "Loading..."} />
         </div>
       </main>
     </>
