@@ -11,16 +11,18 @@ const getBaseUrl = () => {
   return `http://localhost:${process.env.PORT ?? 3000}`;
 };
 
+const options = {
+  transformer: superjson,
+  links: [
+    httpBatchLink({
+      url: `${getBaseUrl()}/api/trpc`,
+    }),
+  ],
+};
+
 export const api = createTRPCNext<AppRouter>({
   config() {
-    return {
-      transformer: superjson,
-      links: [
-        httpBatchLink({
-          url: `${getBaseUrl()}/api/trpc`,
-        }),
-      ],
-    };
+    return options;
   },
 });
 

@@ -2,6 +2,16 @@ import { type AppType } from "next/app";
 import { api } from "../utils/api";
 import "../styles/globals.css";
 
+if (process.env.NEXT_PUBLIC_API_MOCKING === "true") {
+  import("../mocks")
+    .then(async ({ setupMocks }) => {
+      await setupMocks();
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   return <Component {...pageProps} />;
 };
