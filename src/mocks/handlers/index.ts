@@ -1,3 +1,3 @@
-import { skeletonHandlers } from "./api/skeleton";
+import { helloHandlers } from "./api/hello";
 
-export const handlers = [...skeletonHandlers];
+export const handlers = [...helloHandlers];

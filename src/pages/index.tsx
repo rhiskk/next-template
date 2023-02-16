@@ -1,10 +1,7 @@
 import { type NextPage } from "next";
-import { api } from "../utils/api";
 import Greeting from "../components/Greeting";
 
 const Home: NextPage = () => {
-  const hello = api.skeleton.hello.useQuery({ text: "from API" });
-
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-red-700 to-red-800">
@@ -12,7 +9,6 @@ const Home: NextPage = () => {
           <h1 className="border-red-900 text-6xl font-bold text-black">
             Hello world!
           </h1>
-          <Greeting text={hello.data ? hello.data.greeting : "Loading..."} />
         </div>
       </main>
     </>
