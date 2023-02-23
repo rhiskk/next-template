@@ -5,7 +5,7 @@ export const helloHandlers = [
     return res(
       ctx.status(200),
       ctx.json({
-        name: "John Doe",
+        hello: "Hi there!",
       })
     );
   }),

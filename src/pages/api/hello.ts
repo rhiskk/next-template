@@ -1,12 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { prisma } from "../../config/db";
 
 type Data = {
-  name: string;
+  hello: string;
 };
 
 export default function handler(
   _req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: "John Doe" });
+  res.status(200).json({ hello: "H" });
 }
